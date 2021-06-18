@@ -1,14 +1,14 @@
 fun main() {
-   val myFirstDice = Dice()
-   val diceRoll = myFirstDice.roll()
-   println("Your ${myFirstDice.sides} sided dice rolled ${diceRoll}!")
+   val myFirstDice = Dice(6)
+   println("Your ${myFirstDice.numSides} sided dice rolled ${myFirstDice.roll()}!")
+   
+   val mySecondDice = Dice(20)
+   println("Your ${mySecondDice.numSides} sided dice rolled ${mySecondDice.roll()}!")
 }
 
-  class Dice {
-        var sides = 6
-      
+  class Dice(val numSides: Int) {
+        
       fun roll(): Int {
-          val randomNumber = (1..6).random()
-          return randomNumber
+          return (1..numSides).random()
       }
     }
